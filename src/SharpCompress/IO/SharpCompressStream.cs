@@ -203,10 +203,7 @@ public class SharpCompressStream : Stream, IStreamStack
 
     public override long Position
     {
-        get
-        {
-            return _internalPosition - _baseInitialPos;
-        }
+        get { return _internalPosition - _baseInitialPos; }
         set { Seek(value, SeekOrigin.Begin); }
     }
 
