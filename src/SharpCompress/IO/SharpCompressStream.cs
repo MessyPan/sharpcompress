@@ -205,7 +205,7 @@ public class SharpCompressStream : Stream, IStreamStack
     {
         get
         {
-            long pos = _internalPosition; // Stream.Position + _bufferStream.Position - _bufferStream.Length;
+            long pos = _internalPosition - _baseInitialPos; // Stream.Position + _bufferStream.Position - _bufferStream.Length;
             return pos;
         }
         set { Seek(value, SeekOrigin.Begin); }
